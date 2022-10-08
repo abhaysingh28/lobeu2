@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+  </head>
+  <style>
+    body {
+      background-color: #f1f1f1;
+    }
+    .container {
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .card {
+      width: 600px;
+      height: 400px;
+      background-color: rgb(40, 32, 32);
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .card h5 {
+      font-size: 2rem;
+      font-weight: 500;
+      margin: 10px 0;
+      color: white;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    .card button {
+      width: 100px;
+      height: 50px;
+      background-color: rgb(255, 16, 167);
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: 500;
+      margin-top: 20px;
+      border: none;
+      margin-right: 10px;
+      white-space: nowrap;
+      color: white;
+    }
+    .no {
+      position: absolute;
+      left: 50%;   
+    }
+  </style>
+  <body>
+    <div class="container">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Do you love me?</h5>
+          <button href="#" class="btn btn-primary yes">Yes</button>
+          <button href="#" class="btn btn-primary no">No</button>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    var yes = document.querySelector(".yes");
+    var no = document.querySelector(".no");
+    var cardtitle = document.querySelector(".card-title");
+    var card = document.querySelector('.card')
+
+    yes.addEventListener("click", function () {
+      cardtitle.innerHTML = "I love you too !";
+      yes.innerHTML = "meet soon <3"
+      yes.style.width = "140px"
+
+      setTimeout(() => {
+        alert("तेज़ी नहीं ! नो पर वैसे भी क्लिक नही हो पा रहा था कोशिश तो किया था आप ने. अछा नही किया ? तोह कर के देखो 💀")
+      }, 3000);
+    });
+
+    yes.addEventListener("click", function () {
+      no.style.display="none"
+    });
+    no.addEventListener("mouseover", function () {
+        const randm1 = Math.floor(Math.random() * 90);
+        const randm2 = Math.floor(Math.random() * 90);
+        no.style.left = `${randm1}%`;
+        no.style.top = `${randm2}%`;
+    });
+    no.addEventListener("click", function () {
+     
+        const randm1 = Math.floor(Math.random() * 90);
+        const randm2 = Math.floor(Math.random() * 90);
+        no.style.left = `${randm1}%`;
+        no.style.top = `${randm2}%`;
+        
+        
+     
+    });
+  </script>
+</html>
